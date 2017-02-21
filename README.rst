@@ -2,10 +2,15 @@
 MEOPAR UQAR Winter School in Marine Environmental Prediction
 ************************************************************
 
+http://meopar.ca/training/ws2017
+
+
 Code Automation
 ===============
 
 Notes and materials for the Code Automation session.
+
+http://meopar.ca/ws2017-schedule
 
 
 Session Description

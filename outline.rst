@@ -56,7 +56,7 @@ Version Control
 ---------------
 
 * The most important automation tool you'll learn about this week!
-*
+
 * Version Control All The Things! (Almost...)
   * Code
   * Manuscripts of proposals, papers
@@ -78,12 +78,14 @@ Version Control
   * More bonus points for making it public and sharing the URL
 
 * What not to version control:
-  * Some large binary files
+  * Efemeral files that are products of compilation, LaTeX, etc.
+  * Some large binary files and images and PDFs
   * They require lots of memory to process; ~2x their size
   * A full copy is stored every time they are committed, so frequently changed binary files make the repo grow quickly
   * Less of an issue for "hard won" binary files that aren't changed often; e.g.
     * NEMO bathymetry, coordinates, mesh masks
     * Consider using a separate repo if you are developing bathymetry, and then commit the "final" version in your working model parameters repo
+
   * If they aren't under version control, they need to be backed up, redundantly
 
 
@@ -133,6 +135,52 @@ Results Visualization
 Organizing Your Modeling Research Life
 ======================================
 
+Why?
+----
+
+
+What?
+-----
+
+* model code and executable(s)
+* model configurations
+* initial and boundary conditions files
+* forcing files
+* directories for executing model runs
+* run results files
+* analysis and visualization
+
+
+Directories and Repositories
+----------------------------
+
+* Top level project name; e.g. CANYONS
+  * Be consistent across platforms:
+    * /home/doug/Documents/CANYONS on my laptop
+    * /ocean/dlatorne/CANYONS on dev compute server
+    * /home/dlatorne/CANYONS on HPC
+
+* Model code/executables in 1 or more directories:
+  * Cloned or checked out from upstream repositories if possible
+  * NEMO-3.6/, XIOS-2.0/ by svn checkout
+  * wwatch3-5.16/ by unpacking downloaded tarball
+
+* Don't use spaces in file or directory names; use CamelCase, snake_case, or separate-words-with-hyphens
+
+* results/
+  * a tree of systematically named directories that hold run results
+  * *not* a version control repository
+
+
+* forcing/
+  * a tree of systematically named directories that hold run results
+    * atmospheric/
+    * init_fields/
+    * open_boundaries/
+    * runoff/
+  * *not* a version control repository
+
+
 Temporary Run Directories
 -------------------------
 
@@ -174,5 +222,5 @@ Managing Ariane output
   The tool will:
   * Create a new results directory under the results directory parent.
     The name of the directory will be derived from the model run date argument.
-  * Move the namelist and initial particle positions files into the new results directory.
-  * Move the traj.txt output file from Ariane into the new results directory, renaming it to include the model run date; e.g. traj_20160417.txt
+  * Move the namelist and initial particle positions files,
+    and the traj.txt output file from Ariane into the new results directory, renaming it to include the model run date; e.g. traj_20160417.txt

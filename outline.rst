@@ -22,11 +22,12 @@ Big Picture Overview
 
 * Definition
 * Software Tools
-* Assignment #1
+* Exercise #1
 * Organizing Your Modeling Research Life
-* Assignment #2
+* Exercise #2
 * Writing Automation Tools
-* Assignment #3
+* Exercise #3
+* NEMO command processor
 
 
 Definition
@@ -71,7 +72,7 @@ Version Control
   * Subversion (maybe)
   But probably not if they have a grey beard like mine (or even id they don't) and say "We don't use *traditional* version control, per se", or "I have this system of shell scripts that I wrote that does that..."
 
-* Assignment #1:
+* Exercise #1 (an assignment):
   * Create a repo for notes from this week.
   * Add and commit something about each session
   * Bonus points for putting it on GitLab or another web hosting service
@@ -138,6 +139,9 @@ Organizing Your Modeling Research Life
 Why?
 ----
 
+* well structured directory tree with meaningful, consistent directory and file names is easier for humans (future you!, your supervisor) to understand and easier to write automation scripts against
+* assembly robot metaphor
+
 
 What?
 -----
@@ -170,7 +174,16 @@ Directories and Repositories
 * results/
   * a tree of systematically named directories that hold run results
   * *not* a version control repository
+  * e.g. ???
 
+* model configuration(s)
+  * e.g. mackenzie_canyon/
+  * absolutely a version control repository
+
+* analysis/
+  * version control repository
+  * Think about storing large and/or frequently updated binary products; e.g . rendered animations outside of the repo
+  * Bitbucket/Github README.md hack to provide links to nbviewer
 
 * forcing/
   * a tree of systematically named directories that hold run results
@@ -184,8 +197,14 @@ Directories and Repositories
 Temporary Run Directories
 -------------------------
 
+* cooking prep metaphor
 
-Assignment #2
+
+* It will probably take you a few iterations to get a structure that works well for you, your research, and your automation
+* Don't be afraid to change the structure if you need to, but think about your changes to make sure that they are an improvement, then commit to them
+
+
+Exercise #2
 -------------
 
 Create a diagram of repos and directories for your research.
@@ -197,6 +216,17 @@ Writing Automation Tools
 Shell Scripts
 -------------
 
+* good starting point for repeated commands
+  * example?
+* easy to loop over collections of files, sequences of numbers
+  * for d in {15..21}
+    do
+      python -m nowcast.workers.download_PSY4 $NOWCAST_YAML --run-date 2017-02-$d
+    done
+* fairly easy to accept arguments from command-line
+* syntax is somewhat clunky and dated
+* processing options from command-line is verbose and painful
+
 
 Python
 ------
@@ -205,12 +235,13 @@ Python
 * shutil
 * datetime (arrow)
 
+* Python standard library
 * subprocess
 * glob
 * pathlib
 
 
-Assignment #3
+Exercise #3
 -------------
 
 Managing Ariane output
@@ -224,3 +255,27 @@ Managing Ariane output
     The name of the directory will be derived from the model run date argument.
   * Move the namelist and initial particle positions files,
     and the traj.txt output file from Ariane into the new results directory, renaming it to include the model run date; e.g. traj_20160417.txt
+
+
+NEMO Command Processor
+======================
+
+* Example of building out automation tools over time to the point of a complete NEMO run executed from one file with one command
+
+* Docs and repo URLs
+
+* Walk through my implementation of Idalia's Mackenzie Canyon directory organization on salish
+
+* nemo sub-commands:
+  * prepare
+  * combine
+  * deflate
+  * gather
+  * run
+    * nemo run turb_diff.yaml /ocean/dlatorne/CANYONS/results/turb_diff_1e-5/
+
+* Walk through run description YAML file
+
+
+Wrap-Up
+=======

@@ -70,7 +70,7 @@ Version Control
   * Git
   * Mercurial (hg)
   * Subversion (maybe)
-  But probably not if they have a grey beard like mine (or even id they don't) and say "We don't use *traditional* version control, per se", or "I have this system of shell scripts that I wrote that does that..."
+  But probably not if they have a grey beard like mine (or even if they don't) and say "We don't use *traditional* version control, per se", or "I have this system of shell scripts that I wrote that does that..."
 
 * Exercise #1 (an assignment):
   * Create a repo for notes from this week.
@@ -171,14 +171,14 @@ Directories and Repositories
 
 * Don't use spaces in file or directory names; use CamelCase, snake_case, or separate-words-with-hyphens
 
+* model configuration(s)
+  * e.g. mackenzie_canyon/
+  * absolutely a version control repository
+
 * results/
   * a tree of systematically named directories that hold run results
   * *not* a version control repository
   * e.g. ???
-
-* model configuration(s)
-  * e.g. mackenzie_canyon/
-  * absolutely a version control repository
 
 * analysis/
   * version control repository
@@ -186,12 +186,18 @@ Directories and Repositories
   * Bitbucket/Github README.md hack to provide links to nbviewer
 
 * forcing/
-  * a tree of systematically named directories that hold run results
+  * a tree of systematically named directories that hold initialization and/or forcing files
     * atmospheric/
     * init_fields/
     * open_boundaries/
     * runoff/
   * *not* a version control repository
+
+
+Exercise #2
+-------------
+
+Create a diagram of repos and directories for your research.
 
 
 Temporary Run Directories
@@ -202,12 +208,6 @@ Temporary Run Directories
 
 * It will probably take you a few iterations to get a structure that works well for you, your research, and your automation
 * Don't be afraid to change the structure if you need to, but think about your changes to make sure that they are an improvement, then commit to them
-
-
-Exercise #2
--------------
-
-Create a diagram of repos and directories for your research.
 
 
 Writing Automation Tools

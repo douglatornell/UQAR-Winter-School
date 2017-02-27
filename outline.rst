@@ -231,11 +231,11 @@ Shell Scripts
 Python
 ------
 
+* Python standard library
 * argparse
 * shutil
 * datetime (arrow)
 
-* Python standard library
 * subprocess
 * glob
 * pathlib
@@ -272,7 +272,7 @@ NEMO Command Processor
   * deflate
   * gather
   * run
-    * nemo run turb_diff.yaml /ocean/dlatorne/CANYONS/results/turb_diff_1e-5/
+    * nemo run lat_visc.yaml /ocean/dlatorne/CANYONS/results/idealized/237x177grid/lat_visc_tuning/10Pa-s/
 
 * Walk through run description YAML file
 

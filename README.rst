@@ -24,6 +24,12 @@ and run results files.
 We'll use version control tools and scripting in Bash and Python to work in the file and run management framework to make model runs efficient and reproducible so that the focus of research stays on gaining insight from model runs.
 
 
+Slide Deck
+----------
+
+https://bitbucket.org/douglatornell/uqar-winter-school/downloads/slides.pdf
+
+
 Jupyter Notebook
 ----------------
 
@@ -34,7 +40,6 @@ Jupyter Notebook
 A brief introduction to some features of Python and its standard library that are useful for writing code automation scripts.
 
 .. _python_automation.ipynb: https://nbviewer.jupyter.org/urls/bitbucket.org/douglatornell/uqar-winter-school/raw/tip/python_automation.ipynb
-
 
 
 License
